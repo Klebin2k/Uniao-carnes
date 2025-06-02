@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrossel de Imagens</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #f2f2f2;
+    }
+
+    .carrossel {
+      position: relative;
+      width: 600px;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+
+    .imagens {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .imagens img {
+      width: 600px;
+      height: 350px;
+      object-fit: cover;
+    }
+
+    .seta {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      z-index: 1;
+    }
+
+    .seta.esquerda {
+      left: 10px;
+    }
+
+    .seta.direita {
+      right: 10px;
+    }
+
+  </style>
+
+</head>
+<body>
+  <div class="carrossel">
+
+    <button class="seta esquerda" onclick="mudarSlide(-1)">❮</button>
+    <div class="imagens" id="container">
+      <img src="/img/fundo.jpeg" alt="Imagem 1">
+      <img src="/img/picanha01.jpeg" alt="Imagem 2">
+      <img src="/img/linguiça01.jpeg" alt="Imagem 3">
+    </div>
+    <button class="seta direita" onclick="mudarSlide(1)">❯</button>
+  </div>
+
+  <button class="seta esquerda" onclick="mudarSlide(-1)">❮</button>
+    <div class="imagens" id="container">
+      <img src="img1.jpg" alt="Imagem 1">
+      <img src="img2.jpg" alt="Imagem 2">
+      <img src="img3.jpg" alt="Imagem 3">
+    </div>
+    <button class="seta direita" onclick="mudarSlide(1)">❯</button>
+  </div>
+
+  <script>
+    const container = document.getElementById('container');
+    const totalImagens = container.children.length;
+    let indice = 0;
+
+    function mudarSlide(direcao) {
+      indice = (indice + direcao + totalImagens) % totalImagens;
+      container.style.transform = `translateX(-${indice * 600}px)`;
+    }
+
+    setInterval(() => mudarSlide(1), 4000); // Troca automática a cada 4 segundos
+  </script>
+
+</body>
+</html>
