@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contato | União Carnes</title>
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./css/footer.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="shortcut icon" href="./img/icon.ico">
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="./css/header.css">
+</head>
+<body>
+  <header>
+  <nav>
+    <a href="./index.html" class="logo-header">
+      <img src="./img/logo-removebg-preview.png" alt="União Carnes" />
+    </a>
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <i class="fas fa-bars"></i>
+    </div>
+    <ul class="nav-list">
+      <li><a href="./index.html">INÍCIO</a></li>
+      <li><a href="./sobre.html">SOBRE</a></li>
+      <li><a href="./produtos.html">PRODUTOS</a></li>
+      <li><a href="./contato.html">CONTATO</a></li>
+    </ul>
+  </nav>
+  </header>
+
+
+  <main class="contato-container">
+    <section class="contato-intro">
+      <h1>Fale Conosco <i class="fa-solid fa-phone fa-shake" style="color: #ffffff;"> </i></h1>
+      <p>Estamos prontos para te atender da melhor forma. Entre em contato conosco!</p>
+    </section>
+
+    <section class="contato-info">
+      <div class="info-box">
+        <i class="fas fa-map-marker-alt"></i>
+        <p>Rua das Carnes, 2040 - São Paulo, SP</p>
+      </div>
+      <div class="info-box">
+        <i class="fas fa-phone"></i>
+        <p>(11) 97585-8240</p>
+      </div>
+      <div class="info-box">
+        <i class="fas fa-envelope"></i>
+        <p>contato@uniaocarnes.com.br</p>
+      </div>
+    </section>
+
+    <section class="formulario-contato">
+      <form action="https://formsubmit.co/seuemail@email.com" method="POST">
+        <input type="text" name="nome" placeholder="Seu nome" required>
+        <input type="email" name="email" placeholder="Seu e-mail" required>
+        <textarea name="mensagem" placeholder="Escreva sua mensagem..." rows="5" required></textarea>
+        <button type="submit" class="botao">Enviar Mensagem</button>
+      </form>
+    </section>
+  </main>
+
+  <div class="whatsapp-center">
+  <a href="https://wa.me/5511975858240" target="_blank" class="whatsapp-botao">
+    <i class="fab fa-whatsapp"></i> Fale conosco no WhatsApp
+  </a>
+</div>
+
+
+  <!-- Chat interativo -->
+  <div id="chat-button" onclick="toggleChat()">
+    <i class="fa fa-comment-dots"></i>
+  </div>
+
+  <div id="chat-box">
+    <div class="chat-header">
+      Atendimento União Carnes <span onclick="toggleChat()">×</span>
+    </div>
+    <div class="chat-body" id="chat-body">
+      <div class="bot-message">Olá! 👋 Como podemos te ajudar?</div>
+    </div>
+    <div class="chat-footer">
+      <input type="text" id="userInput" placeholder="Digite sua mensagem..." onkeypress="handleKey(event)" />
+      <button onclick="sendMessage()">Enviar</button>
+      <button onclick="sendToWhatsApp()" class="whats-btn">Continuar no WhatsApp</button>
+    </div>
+  </div>
+
+  <!-- Botão Flutuante do WhatsApp -->
+  <div id="whatsapp-chat" onclick="openWhatsApp()">
+    <i class="fab fa-whatsapp"></i>
+    <span class="chat-text">Fale conosco!</span>
+  </div>
+
+  <script src="/main.js"></script>
+ <footer>
+    <div class="footer-container">
+
+       <div class="footer__content">
+    <a href="https://wa.me/5511975685168" target="_blank" class="footer__button">
+      Faça seu pedido pelo WhatsApp <i class="fab fa-whatsapp"></i>
+    </a>
+  </div>
+      <br>
+      <p>&copy; 2025 União Carnes. Todos os direitos reservados.</p>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/acougue_uniao2040/?igsh=ODNtdGw1d3M4ejZy#"><i class="fab fa-instagram"></i></a>
+        <a href="https://wa.me/5511975858240"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+  function toggleMenu() {
+    const navList = document.querySelector('.nav-list');
+    navList.classList.toggle('open');
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,75 @@
+/* sobre.css */
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+ background-color:rgb(42, 42, 42);
+  color: #333;
+}
+
+.sobre-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.sobre-conteudo,
+.valores {
+  margin-bottom: 40px;
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.sobre-conteudo h1,
+.valores h2 {
+  color: #c62828;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #c62828;
+  padding-bottom: 10px;
+}
+
+.sobre-conteudo p {
+  line-height: 1.7;
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+}
+
+.valores ul {
+  list-style: none;
+  padding: 0;
+}
+
+.valores li {
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #444;
+}
+
+.valores i {
+  color: #4caf50;
+  font-size: 1.3rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .sobre-container {
+    padding: 20px 15px;
+  }
+
+  .sobre-conteudo h1,
+  .valores h2 {
+    font-size: 1.5rem;
+  }
+
+  .sobre-conteudo p,
+  .valores li {
+    font-size: 1rem;
+  }
+}
