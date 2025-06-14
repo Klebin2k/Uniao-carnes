@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sobre - União Carnes</title>
+
+  <link rel="stylesheet" href="./css/footer.css">
+  <link rel="stylesheet" href="./css/header.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/sobre.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="shortcut icon" href="./img/icon.ico">
+</head>
+<body>
+  <header>
+  <nav>
+    <a href="./index.html" class="logo-header">
+      <img src="./img/logo-removebg-preview.png" alt="União Carnes" />
+    </a>
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <i class="fas fa-bars"></i>
+    </div>
+    <ul class="nav-list">
+      <li><a href="./index.html">INÍCIO</a></li>
+      <li><a href="./sobre.html">SOBRE</a></li>
+      <li><a href="./produtos.html">PRODUTOS</a></li>
+      <li><a href="./contato.html">CONTATO</a></li>
+    </ul>
+  </nav>
+</header>
+
+
+  <main class="hero sobre-hero">
+    <div class="overlay">
+      <h1 class="titulo">Conheça a União Carnes</h1>
+      <p class="subtitulo">Tradição, excelência e sabor em cada corte.</p>
+    </div>
+  </main>
+
+  <section class="sobre-container">
+    <div class="sobre-conteudo">
+      <h2>Nossa História</h2>
+      <p>
+        A <strong>União Carnes</strong> nasceu do sonho de oferecer aos brasileiros carnes selecionadas com qualidade, respeito e procedência. Há anos no mercado, conquistamos a confiança de nossos clientes pela dedicação com que tratamos cada detalhe — do atendimento à seleção dos melhores cortes.
+      </p>
+    </div>
+
+    <div class="sobre-conteudo">
+      <h2>Compromisso com a Qualidade</h2>
+      <p>
+        Trabalhamos com rigorosos padrões de higiene e segurança alimentar, mantendo parcerias com fornecedores certificados e confiáveis. Nossos produtos são manuseados com responsabilidade, carinho e profissionalismo.
+      </p>
+    </div>
+
+    <div class="valores">
+      <h2>Nossos Valores</h2>
+      <ul>
+        <li><i class="fas fa-check-circle"></i> Qualidade em cada corte</li>
+        <li><i class="fas fa-handshake"></i> Relacionamento com o cliente</li>
+        <li><i class="fas fa-seedling"></i> Sustentabilidade e respeito ao meio ambiente</li>
+        <li><i class="fas fa-shield-alt"></i> Segurança e procedência garantidas</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Chat interativo -->
+  <div id="chat-button" onclick="toggleChat()">
+    <i class="fa fa-comment-dots"></i>
+  </div>
+
+  <div id="chat-box">
+    <div class="chat-header">
+      Atendimento União Carnes<span onclick="toggleChat()">×</span>
+    </div>
+    <div class="chat-body" id="chat-body">
+      <div class="bot-message">Olá! 👋 Como podemos te ajudar?</div>
+    </div>
+    <div class="chat-footer">
+      <input type="text" id="userInput" placeholder="Digite sua mensagem..." onkeypress="handleKey(event)" />
+      <button onclick="sendMessage()">Enviar</button>
+      <button onclick="sendToWhatsApp()" class="whats-btn">Continuar no WhatsApp</button>
+    </div>
+  </div>
+
+  <!-- Botão Flutuante do WhatsApp -->
+  <div id="whatsapp-chat" onclick="openWhatsApp()">
+    <i class="fab fa-whatsapp"></i>
+    <span class="chat-text">Fale conosco!</span>
+  </div>
+
+  <script src="/main.js"></script>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer__content">
+        <a href="https://wa.me/5511975685168" target="_blank" class="footer__button">
+          Faça seu pedido pelo WhatsApp <i class="fab fa-whatsapp"></i>
+        </a>
+      </div>
+      <br>
+      <p>&copy; 2025 União Carnes. Todos os direitos reservados.</p>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/acougue_uniao2040/"><i class="fab fa-instagram"></i></a>
+        <a href="https://wa.me/5511975858240"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+  function toggleMenu() {
+    const navList = document.querySelector('.nav-list');
+    navList.classList.toggle('open');
+  }
+</script>
+
+</body>
+</html>
