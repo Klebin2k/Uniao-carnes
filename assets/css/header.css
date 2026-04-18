@@ -1,0 +1,86 @@
+header {
+  background-color: rgba(0, 0, 0, 0.85);
+  width: 100%;
+  z-index: 10;
+  height: 80px;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  height: 100%;
+  position: relative;
+}
+
+.logo-header img {
+  height: 100%;
+  max-height: 80px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.logo-header img:hover {
+  transform: scale(1.1);
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  pointer-events: auto; /* importante aqui */
+}
+
+.nav-list li a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: transform 0.3s ease;
+}
+
+.nav-list li a:hover {
+  transform: scale(1.1);
+}
+
+/* Botão hamburguer - escondido no desktop */
+.menu-toggle {
+  display: none;
+  font-size: 26px;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-list {
+    position: absolute;
+    top: 80px;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.95);
+    flex-direction: column;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+    pointer-events: none; /* evita clique antes da animação */
+  }
+
+  .nav-list.open {
+    max-height: 500px;
+    pointer-events: auto;
+  }
+
+  .nav-list li {
+    margin: 15px 0;
+    text-align: center;
+  }
+}
